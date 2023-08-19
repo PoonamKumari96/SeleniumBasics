@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Auto_Suggestion {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","Z:\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","Z:\\Projects\\SeleniumBasics\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         driver.manage().window().maximize();
