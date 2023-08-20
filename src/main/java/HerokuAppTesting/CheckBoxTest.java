@@ -26,6 +26,7 @@ public class CheckBoxTest {
             }
             driver.findElement(By.xpath("/html/body/div[2]/div/div/form/input[2]")).click();
             driver.findElement(By.xpath("/html/body/div[2]/div/div/form/input[1]")).click();
-
+            Thread.sleep(2000);
+            driver.quit();
         }
 }
