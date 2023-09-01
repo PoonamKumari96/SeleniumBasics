@@ -1,6 +1,7 @@
 package HerokuAppTesting;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,15 +18,19 @@ public class horizontalSliderTest {
 
         driver.findElement(By.xpath("//a[normalize-space()='Horizontal Slider']")).click();
 
-        Actions actions = new Actions(driver);
         WebElement slider = driver.findElement(By.xpath("//input[@value='0']"));
         Thread.sleep(2000);
-        actions.dragAndDropBy(slider, 50,0).perform();
-        Thread.sleep(1000);
-        actions.dragAndDropBy(slider, -10,0).perform();
-        Thread.sleep(1000);
-        actions.dragAndDropBy(slider, 20,0).perform();
-        Thread.sleep(3000);
+
+        for (int i = 0; i<4; i++) {
+            slider.sendKeys(Keys.ARROW_RIGHT);
+            Thread.sleep(500);
+        }
+        Thread.sleep(2000);
+        for (int i = 0; i<3; i++) {
+            slider.sendKeys(Keys.ARROW_LEFT);
+            Thread.sleep(500);
+        }
+        Thread.sleep(2000);
         driver.quit();
 
     }
